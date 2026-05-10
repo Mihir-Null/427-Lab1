@@ -455,6 +455,7 @@ impl ApplicationHandler for App
                 .create_window(
                     Window::default_attributes()
                         .with_title("CMSC427 Lab 01 – GPU Pipeline")
+                        .with_inner_size(winit::dpi::PhysicalSize::new(1280u32, 720u32))
                 )
                 .unwrap(),
         );
