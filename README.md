@@ -1,5 +1,7 @@
 # CMSC427 Lab 01 Report
 
+**Live demo:** https://mihir-null.github.io/427-Lab1/
+
 This lab was implemented in Rust with wgpu and winit. It ports the basic WebGL pipeline idea into the same  GPU model used by the coursework projects: define vertex data on the CPU, upload it into GPU buffers, create a render pipeline, and issue draw calls. Much of the infrastructure has been ported over from lab 0 (because I wrote that after this lab)
 
 The general pipeline for in webgpu is similar to webgl, with every piece of geometry being processed as follows:
