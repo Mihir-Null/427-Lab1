@@ -480,7 +480,10 @@ impl ApplicationHandler for App
             let cell   = self.state.clone();
             let window = window.clone();
             wasm_bindgen_futures::spawn_local(async move {
-                let state = State::new(window.clone()).await;
+                let mut state = State::new(window.clone()).await;
+                // on WASM, Resized never fires at startup — configure surface here while we have the window
+                let s = window.inner_size();
+                state.gpu.resize(s.width, s.height);
                 *cell.borrow_mut() = Some(state);
                 window.request_redraw();
             });
